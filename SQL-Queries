@@ -1,0 +1,27 @@
+SELECT CustomerName
+From (
+SELECT Orders.OrderID,
+Customers.CustomerName,
+Customers.Address,
+OrderDetails.ProductID
+From Orders
+JOIN Customers
+ON Orders.CustomerID = Customers.CustomerID
+JOIN OrderDetails
+ON Orders.OrderID = OrderDetails.OrderID
+)
+WHERE OrderID = 10310;
+
+SELECT Address
+From (
+SELECT Orders.OrderID,
+Customers.CustomerName,
+Customers.Address,
+OrderDetails.ProductID
+From Orders
+JOIN Customers
+ON Orders.CustomerID = Customers.CustomerID
+JOIN OrderDetails
+ON Orders.OrderID = OrderDetails.OrderID
+)
+WHERE ProductID = 40;
